@@ -95,7 +95,7 @@ footer {
     /* ensure the element spans the full viewport width (not just parent) */
     width: 100vw;
     padding: 70px;
-    padding-top: 170px;
+    padding-top: 120px;
     justify-content: center;
     align-items: center;
     text-align: center;
