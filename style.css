@@ -319,8 +319,9 @@ html, body {
         height: auto;
         min-height: 0;
         background-attachment: scroll;
-        /* ensure cover scales to fill width on narrow viewports */
-        background-size: 100% auto;
+        /* keep cover behavior so image fills area without shrinking too much */
+        background-size: cover;
+        background-position: center center;
     }
     .descriptions {
         flex-direction: column;
