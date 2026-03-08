@@ -92,6 +92,8 @@ footer {
 }
 
 #hero {
+    /* ensure the element spans the full viewport width (not just parent) */
+    width: 100vw;
     padding: 70px;
     padding-top: 170px;
     justify-content: center;
@@ -163,9 +165,15 @@ h4 {
 
 
 section {
+    width: 100%; /* full width so background covers entire viewport */
     height:100vh;
     scroll-snap-align: start;
     padding:30px;
+}
+
+/* also ensure root elements don't shrink unexpectedly */
+html, body {
+    width: 100%;
 }
 
 #about {
@@ -311,6 +319,8 @@ section {
         height: auto;
         min-height: 0;
         background-attachment: scroll;
+        /* ensure cover scales to fill width on narrow viewports */
+        background-size: 100% auto;
     }
     .descriptions {
         flex-direction: column;
