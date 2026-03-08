@@ -236,6 +236,16 @@ section {
     text-align: center;
 }
 
+/* card around social links to match other section styling */
+#contacts .contact-card {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+}
+
 .socials {
     list-style: none;
     display: flex;
