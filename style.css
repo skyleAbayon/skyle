@@ -95,7 +95,8 @@ footer {
     /* ensure the element spans the full viewport width (not just parent) */
     width: 100vw;
     padding: 70px;
-    padding-top: 120px;
+    /* additional space at top so header never overlaps when zoomed */
+    padding-top: 150px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -166,9 +167,13 @@ h4 {
 
 section {
     width: 100%; /* full width so background covers entire viewport */
-    height:100vh;
+    /* allow each section to grow when content expands (zoom, large text) */
+    min-height: 100vh;
     scroll-snap-align: start;
-    padding:30px;
+    /* top padding keeps content below fixed header */
+    padding: 80px 30px 30px; /* header is ~60px + extra spacing */
+    position: relative;
+    z-index: 1;
 }
 
 /* also ensure root elements don't shrink unexpectedly */
@@ -297,7 +302,7 @@ html, body {
     }
     /* compensate for the taller fixed header on small screens */
     #hero {
-        padding-top: 120px;
+        padding-top: 150px;
     }
     h2 {
         font-size: 200%;
@@ -310,8 +315,10 @@ html, body {
         text-align: center;
     }
     section {
-        padding: 20px;
-        height: auto;
+        /* maintain top offset under header even when padding shrinks */
+        padding: 80px 20px 20px;
+        /* allow sections to collapse below 100vh when content is short */
+        min-height: 0;
     }
     /* make large sections shrink on mobile and disable fixed backgrounds */
     #hero, #about, #work, #contacts {
