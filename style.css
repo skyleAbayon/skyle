@@ -363,7 +363,8 @@ section {
 }
 
 /* simple emoji icons using pseudo-elements */
-.socials li a.facebook::before { content: "📘"; margin-right: 8px; }
-.socials li a.instagram::before { content: "📸"; margin-right: 8px; }
-.socials li a.youtube::before { content: "📺"; margin-right: 8px; }
-.socials li a.tiktok::before { content: "🎵"; margin-right: 8px; }
+.socials li a i {
+    margin-right: 8px;
+    font-size: 1.2em;
+    vertical-align: middle;
+}
