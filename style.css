@@ -215,6 +215,57 @@ section {
     width: 100%;
 }
 
+/* responsive tweaks */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .menu {
+        flex-direction: column;
+        gap: 10px;
+        margin-right: 0;
+    }
+    #hero h1 {
+        font-size: 500%;
+        line-height: 120%;
+    }
+    h2 {
+        font-size: 200%;
+        margin-left: 2vh;
+    }
+    h3 {
+        font-size: 120%;
+    }
+    h1, #hero p {
+        text-align: center;
+    }
+    section {
+        padding: 20px;
+        height: auto;
+    }
+    .descriptions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .about-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    .gallery-item {
+        flex-basis: 90%;
+    }
+    #contacts {
+        height: auto;
+        padding: 60px 20px;
+    }
+    .socials {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+}
+
 
 #contacts {
     background-image: url('https://wallpapers.com/images/hd/office-desk-next-to-a-window-22pzglrcerlfkhzr.jpg');
@@ -239,11 +290,12 @@ section {
 /* card around social links to match other section styling */
 #contacts .contact-card {
     background-color: rgba(0, 0, 0, 0.6);
-    padding: 30px;
+    padding: 40px 60px;
     border-radius: 10px;
     box-shadow: 1px 1px 4px rgb(0, 0, 0);
     display: flex;
     justify-content: center;
+    max-width: 600px;
 }
 
 .socials {
@@ -256,12 +308,12 @@ section {
 
 .socials li a {
     display: inline-block;
-    padding: 12px 24px;
+    padding: 20px 40px;
     border-radius: 30px;
     background-color: rgba(29, 124, 187, 0.8);
     color: #fff;
     font-weight: 700;
-    transition: background-color 0.3s, transform 0.2s;
+    font-size: 1.2rem;
 }
 
 .socials li a:hover {
