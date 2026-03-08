@@ -2,14 +2,24 @@ html {
     scroll-behavior: smooth;
 }
 
+/* make layout calculations easier on all devices */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
-    color:rgb(246, 255, 254);
+    color: rgb(246, 255, 254);
     background-color: rgb(49, 58, 66);
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-    height: 100vh;
+    /* avoid forcing a fixed viewport height on mobile browsers */
+    min-height: 100vh;
     margin: 0;
+    overflow-x: hidden;
 }
+
 
 header{
     display: flex;
@@ -60,6 +70,8 @@ header{
     list-style-type: none;
     justify-content: flex-end;
     margin-right: 60px;
+    /* ensure the menu is on top when it opens on mobile */
+    z-index: 20;
 }
 
 a {
@@ -85,7 +97,8 @@ footer {
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 100vh;
+    /* use min-height so the section can shrink when the viewport changes height */
+    min-height: 100vh;
     background-image: url('https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
     background-repeat: no-repeat;
     background-size: cover;
@@ -95,7 +108,8 @@ footer {
 
 h1 {
     font-size: 950%;
-    line-height: 20%;
+    /* long text with insane line-height caused wrapping issues on narrow viewports */
+    line-height: 1.1;
     text-shadow: 3px 3px 5px rgb(0, 0, 0);
     font-weight: 800;
     transition: 950% 2s;
@@ -241,6 +255,11 @@ section {
         justify-content: space-between;
         padding: 10px;
     }
+    /* remove extra logo margin on narrow screens */
+    .logo {
+        margin-left: 0;
+        font-size: 150%;
+    }
     .hamburger {
         display: flex;
     }
@@ -268,6 +287,10 @@ section {
         font-size: 500%;
         line-height: 120%;
     }
+    /* compensate for the taller fixed header on small screens */
+    #hero {
+        padding-top: 120px;
+    }
     h2 {
         font-size: 200%;
         margin-left: 2vh;
@@ -283,8 +306,10 @@ section {
         height: auto;
     }
     /* make large sections shrink on mobile and disable fixed backgrounds */
-    #about, #work, #contacts {
+    #hero, #about, #work, #contacts {
+        /* hero already uses min-height, but allow it to grow/shrink here too */
         height: auto;
+        min-height: 0;
         background-attachment: scroll;
     }
     .descriptions {
