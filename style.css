@@ -92,8 +92,10 @@ footer {
 }
 
 #hero {
-    /* ensure the element spans the full viewport width (not just parent) */
-    width: 100vw;
+    /* allow the section to size like its container; vw can overflow on mobile
+       when scrollbars appear, so avoid it */
+    width: 100%;
+    max-width: 100%;
     padding: 70px;
     /* additional space at top so header never overlaps when zoomed */
     padding-top: 150px;
@@ -320,13 +322,10 @@ html, body {
         /* allow sections to collapse below 100vh when content is short */
         min-height: 0;
     }
-    /* make large sections shrink on mobile and disable fixed backgrounds */
+    /* disable fixed backgrounds on mobile without collapsing sections */
     #hero, #about, #work, #contacts {
-        /* hero already uses min-height, but allow it to grow/shrink here too */
-        height: auto;
-        min-height: 0;
         background-attachment: scroll;
-        /* keep cover behavior so image fills area without shrinking too much */
+        /* keep cover behavior so image always fills the section area */
         background-size: cover;
         background-position: center center;
     }
