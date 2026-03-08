@@ -279,6 +279,11 @@ section {
         padding: 20px;
         height: auto;
     }
+    /* make large sections shrink on mobile and disable fixed backgrounds */
+    #about, #work, #contacts {
+        height: auto;
+        background-attachment: scroll;
+    }
     .descriptions {
         flex-direction: column;
         gap: 10px;
@@ -304,6 +309,23 @@ section {
         flex-direction: column;
         gap: 15px;
         align-items: center;
+    }
+    .socials li a {
+        padding: 15px 30px;
+        font-size: 1rem;
+    }
+    .contact-card {
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 30px 40px;
+        max-width: 90%;
+    }
+    #contacts .contact-intro {
+        max-width: 80%;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+        line-height: 1.4;
     }
 }
 
@@ -336,7 +358,10 @@ section {
     box-shadow: 1px 1px 4px rgb(0, 0, 0);
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
     max-width: 1000px;
+    width: 90%;
 }
 
 .socials {
