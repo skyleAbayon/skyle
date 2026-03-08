@@ -336,7 +336,7 @@ section {
     box-shadow: 1px 1px 4px rgb(0, 0, 0);
     display: flex;
     justify-content: center;
-    max-width: 600px;
+    max-width: 1000px;
 }
 
 .socials {
