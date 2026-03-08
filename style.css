@@ -101,7 +101,8 @@ footer {
     padding-top: 150px;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    /* align text to the left edge of the hero container */
+    text-align: left;
     /* use min-height so the section can shrink when the viewport changes height */
     min-height: 120vh;
     background-image: url('https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
@@ -313,8 +314,9 @@ html, body {
     h3 {
         font-size: 120%;
     }
+    /* remove earlier centering; hero text now inherits left alignment */
     h1, #hero p {
-        text-align: center;
+        text-align: inherit;
     }
     section {
         /* maintain top offset under header even when padding shrinks */
