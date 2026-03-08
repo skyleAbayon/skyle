@@ -222,4 +222,45 @@ section {
     background-size: cover;
     background-attachment: fixed;
     height: 75vh;
+
+    /* center content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
 }
+
+#contacts h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.socials {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.socials li a {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 30px;
+    background-color: rgba(29, 124, 187, 0.8);
+    color: #fff;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.socials li a:hover {
+    background-color: rgba(29, 124, 187, 1);
+    transform: translateY(-2px);
+}
+
+/* simple emoji icons using pseudo-elements */
+.socials li a.facebook::before { content: "📘"; margin-right: 8px; }
+.socials li a.instagram::before { content: "📸"; margin-right: 8px; }
+.socials li a.youtube::before { content: "📺"; margin-right: 8px; }
+.socials li a.tiktok::before { content: "🎵"; margin-right: 8px; }
