@@ -99,10 +99,13 @@ footer {
     padding: 70px;
     /* additional space at top so header never overlaps when zoomed */
     padding-top: 150px;
+    /* center all child content both horizontally and vertically */
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* align text to the left edge of the hero container */
-    text-align: left;
+    /* center text inside the hero container */
+    text-align: center;
     /* use min-height so the section can shrink when the viewport changes height */
     min-height: 120vh;
     background-image: url('https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
@@ -113,39 +116,40 @@ footer {
 }
 
 h1 {
-    font-size: 950%;
-    /* long text with insane line-height caused wrapping issues on narrow viewports */
+    /* responsive headline: never smaller than 2rem, scales with viewport, caps at 6rem */
+    font-size: clamp(2rem, 8vw, 6rem);
     line-height: 1.1;
     text-shadow: 3px 3px 5px rgb(0, 0, 0);
     font-weight: 800;
-    transition: 950% 2s;
+    transition: font-size 2s;
 }
 h1:hover {
     text-shadow: 3px 3px 5px rgb(0, 61, 194);
 }
 
 h2 {
-    font-size: 250%;
+    font-size: clamp(1.5rem, 5vw, 3.5rem);
     margin-top: 70px;
     text-shadow: 3px 3px 5px rgb(0, 0, 0);
-    text-align: left;
+    /* center heading when inside hero, otherwise inherit parent alignment */
+    text-align: inherit;
     margin-left: 5vh;
     font-weight: 800;
 }
 
 h3 {
-    font-size: 150%;
+    font-size: clamp(1.2rem, 4vw, 2.5rem);
     text-shadow: 3px 3px 5px rgb(0, 0, 0);
     font-weight: 800;
 }
 
 h4 {
-    font-size: 120%;
+    font-size: clamp(1rem, 3vw, 2rem);
 }
 
 #hero p {
-    font-size: 140%;
-    line-height: 80%;
+    font-size: clamp(1rem, 3vw, 1.75rem);
+    line-height: 1.4;
     font-weight: 500;
 }
 
